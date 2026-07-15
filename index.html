@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人导航</title>
+  <link rel="stylesheet" href="static/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<!-- ═══ SPLASH ═══ -->
+<div class="splash" id="splash">
+  <div class="splash-grid"></div>
+  <div class="splash-particles">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="splash-scan"></div>
+  <div class="splash-orbit">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="splash-inner">
+    <div class="splash-logo">
+      <img src="static/img/logo.gif" alt="">
+      <div class="splash-ring"></div>
+      <div class="splash-ring splash-ring2"></div>
+    </div>
+    <h1 class="splash-title">
+      <span>甜</span><span>甜</span><span>个</span><span>导</span>
+    </h1>
+    <div class="splash-divider">
+      <span class="sd-line"></span>
+      <span class="sd-dot"></span>
+      <span class="sd-line"></span>
+    </div>
+    <p class="splash-tagline">全栈开发 / 独立创作者</p>
+    <div class="splash-dots">
+      <span>●</span><span>●</span><span>●</span><span>●</span>
+    </div>
+    <p class="splash-loading">INITIALIZING</p>
+  </div>
+  <div class="splash-corners">
+    <span class="sc-tl"></span><span class="sc-tr"></span>
+    <span class="sc-bl"></span><span class="sc-br"></span>
+  </div>
+</div>
+
+<div class="bento">
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero bento-full">
+    <div class="hero-inner">
+      <div class="hero-avatar">
+        <img src="static/img/logo.gif" alt="头像">
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-title">甜甜个导</h1>
+        <p class="hero-tagline">全栈开发 / 独立创作者</p>
+        <p class="hero-quote">莫愁前路无知己，天下谁人不识君。</p>
+      </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="切换主题"><i class="fas fa-moon"></i></button>
+    <div class="hero-glow"></div>
+  </section>
+
+  <!-- ═══ Left Column ═══ -->
+  <div class="col-stack bento-left">
+
+    <div class="announce-block">
+      <div class="announce-header"><i class="fas fa-bullhorn"></i> 最新动态</div>
+      <div class="announce-track" id="announceTrack">
+        <div class="announce-item announce-new"><span class="ann-dot"></span><span class="ann-time">06/19</span> 软件商城全新上线</div>
+        <div class="announce-item announce-info"><span class="ann-dot"></span><span class="ann-time">06/18</span> 服务器多地部署完成</div>
+        <div class="announce-item announce-hot"><span class="ann-dot"></span><span class="ann-time">06/16</span> 在线签名 v3.0 更新</div>
+        <div class="announce-item announce-info"><span class="ann-dot"></span><span class="ann-time">06/15</span> 域名租赁暑期 5 折</div>
+        <div class="announce-item announce-new"><span class="ann-dot"></span><span class="ann-time">06/12</span> openlist 云盘 100TB</div>
+        <div class="announce-item announce-hot"><span class="ann-dot"></span><span class="ann-time">06/10</span> 证书库存补货完成</div>
+        <div class="announce-item announce-info"><span class="ann-dot"></span><span class="ann-time">06/08</span> CDN 加速全面上线</div>
+        <div class="announce-item announce-new"><span class="ann-dot"></span><span class="ann-time">06/05</span> 支付接口安全性升级</div>
+      </div>
+    </div>
+
+    <section class="card skills-card">
+      <div class="card-body">
+        <div class="card-label"><i class="fas fa-tools"></i> 技术能力</div>
+        <div class="tag-cloud">
+          <span class="tag-item tag-lg tag-pink">PHP</span>
+          <span class="tag-item tag-md tag-blue">Vue.js</span>
+          <span class="tag-item tag-sm tag-green">React</span>
+          <span class="tag-item tag-xl tag-purple">Python</span>
+          <span class="tag-item tag-md tag-orange">Docker</span>
+          <span class="tag-item tag-lg tag-cyan">MySQL</span>
+          <span class="tag-item tag-sm tag-pink">Redis</span>
+          <span class="tag-item tag-md tag-blue">Nginx</span>
+          <span class="tag-item tag-lg tag-green">Node.js</span>
+          <span class="tag-item tag-sm tag-purple">Git</span>
+          <span class="tag-item tag-xl tag-orange">Linux</span>
+          <span class="tag-item tag-md tag-cyan">TypeScript</span>
+        </div>
+        <div class="terminal" id="terminal">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+          <div class="term-body">
+            <span class="term-prompt">$</span>
+            <span class="term-cmd" id="termCmd"></span>
+            <span class="term-cursor">_</span>
+          </div>
+        </div>
+        <div class="quote-box" id="quoteBox">
+          <i class="fas fa-quote-right"></i>
+          <p class="quote-text" id="quoteText"></p>
+          <p class="quote-from" id="quoteFrom"></p>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="card gallery-card">
+      <div class="card-body">
+        <div class="card-label"><i class="fas fa-image"></i> Gallery</div>
+        <div class="gallery-img">
+          <img src="static\img\bizhi.jpg" alt="Gallery">
+        </div>
+      </div>
+    </div>
+
+    <div class="music-card">
+      <div class="music-inner">
+        <div class="music-cover" id="musicCover">
+          <i class="fas fa-music"></i>
+        </div>
+        <div class="music-info">
+          <p class="music-title" id="musicTitle">Blinding Lights</p>
+          <p class="music-artist" id="musicArtist">The Weeknd</p>
+        </div>
+        <div class="music-bars">
+          <span class="mu-bar"></span><span class="mu-bar"></span><span class="mu-bar"></span><span class="mu-bar"></span>
+        </div>
+      </div>
+      <div class="music-progress"><span class="music-fill"></span></div>
+    </div>
+
+
+  </div>
+
+  <!-- ═══ Right Column ═══ -->
+  <div class="col-stack bento-right">
+
+    <section class="card about-card">
+      <div class="card-body">
+        <div class="card-label"><i class="fas fa-user"></i> 关于我</div>
+        <p class="about-text">热爱技术与设计，喜欢用代码创造美好的事物。专注于 Web 全栈开发，对前端美学和用户体验有执念。业余喜欢摄影、阅读和折腾有趣的开源项目。</p>
+      </div>
+    </section>
+
+    <!-- announce mobile: shown only on small screens -->
+    <div class="announce-block announce-mobile">
+      <div class="announce-header"><i class="fas fa-bullhorn"></i> 最新动态</div>
+      <div class="announce-track" id="announceTrackM">
+        <div class="announce-item announce-new"><span class="ann-dot"></span><span class="ann-time">06/19</span> 软件商城全新上线</div>
+        <div class="announce-item announce-info"><span class="ann-dot"></span><span class="ann-time">06/18</span> 服务器多地部署完成</div>
+        <div class="announce-item announce-hot"><span class="ann-dot"></span><span class="ann-time">06/16</span> 在线签名 v3.0 更新</div>
+        <div class="announce-item announce-info"><span class="ann-dot"></span><span class="ann-time">06/15</span> 域名租赁暑期 5 折</div>
+        <div class="announce-item announce-new"><span class="ann-dot"></span><span class="ann-time">06/12</span> openlist 云盘 100TB</div>
+        <div class="announce-item announce-hot"><span class="ann-dot"></span><span class="ann-time">06/10</span> 证书库存补货完成</div>
+        <div class="announce-item announce-info"><span class="ann-dot"></span><span class="ann-time">06/08</span> CDN 加速全面上线</div>
+        <div class="announce-item announce-new"><span class="ann-dot"></span><span class="ann-time">06/05</span> 支付接口安全性升级</div>
+      </div>
+    </div>
+
+    <!-- ═══ Sites ═══ -->
+    <section class="card sites-card">
+      <div class="card-body">
+        <div class="card-label"><i class="fas fa-globe"></i> 我的站点</div>
+
+        <div class="site-group"><i class="fas fa-chart-line"></i> 运营站点</div>
+        <div class="site-grid">
+          <a href="https://zpyx.mistora.cn/" class="site-item" target="_blank" rel="noopener" style="--ac:#f59e0b"><i class="fas fa-shopping-cart"></i><span class="site-name">软件商城</span><span class="site-desc">应用与软件分发</span></a>
+          <a href="https://bkm.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#6366f1"><i class="fas fa-blog"></i><span class="site-name">源码博客</span><span class="site-desc">技术文章与源码</span></a>
+          <a href="https://idc.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#10b981"><i class="fas fa-server"></i><span class="site-name">服务器出租</span><span class="site-desc">高性价比云服务器</span></a>
+          <a href="https://dns.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#3b82f6"><i class="fas fa-globe"></i><span class="site-name">域名出租</span><span class="site-desc">优质域名租赁</span></a>
+          <a href="https://xyf.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#8b5cf6"><i class="fas fa-credit-card"></i><span class="site-name">码/易支付</span><span class="site-desc">稳定支付通道</span></a>
+          <a href="https://pan.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#06b6d4"><i class="fas fa-cloud-upload-alt"></i><span class="site-name">openlist云盘</span><span class="site-desc">大容量文件存储</span></a>
+          <a href="https://yz.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#14b8a6"><i class="fas fa-check-circle"></i><span class="site-name">IOS卡密验证</span><span class="site-desc">卡密验证系统</span></a>
+          <a href="https://auths.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#ef4444"><i class="fas fa-user-shield"></i><span class="site-name">授权站点</span><span class="site-desc">授权服务</span></a>
+        </div>
+
+        <div class="site-group"><i class="fas fa-file-signature"></i> 签名站点</div>
+        <div class="site-grid">
+          <a href="https://cer.mistora.club/jc" class="site-item" target="_blank" rel="noopener" style="--ac:#f43f5e"><i class="fas fa-play-circle"></i><span class="site-name">视频教程合集</span><span class="site-desc">开发运维教程</span></a>
+          <a href="https://cer.mistora.club/" class="site-item" target="_blank" rel="noopener" style="--ac:#f59e0b"><i class="fas fa-certificate"></i><span class="site-name">证书主站</span><span class="site-desc">iOS 证书管理</span></a>
+          <a href="https://zxqm.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#ec4899"><i class="fas fa-pen-fancy"></i><span class="site-name">在线签名</span><span class="site-desc">IPA 在线签名</span></a>
+          <a href="https://udid.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#0ea5e9"><i class="fas fa-mobile-alt"></i><span class="site-name">UDID获取</span><span class="site-desc">设备 UDID 查询</span></a>
+          <a href="https://nby.wzdl.shop/appstore" class="site-item" target="_blank" rel="noopener" style="--ac:#a855f7"><i class="fas fa-cubes"></i><span class="site-name">软件源预览</span><span class="site-desc">软件源资源浏览</span></a>
+          <a href="https://cer.mistora.club/index/index/certhauth" class="site-item" target="_blank" rel="noopener" style="--ac:#22c55e"><i class="fas fa-shield-alt"></i><span class="site-name">证书鉴权</span><span class="site-desc">证书状态验证</span></a>
+          <a href="https://cer.mistora.club/index/index/certchange" class="site-item" target="_blank" rel="noopener" style="--ac:#f97316"><i class="fas fa-key"></i><span class="site-name">证书改密</span><span class="site-desc">证书密码修改</span></a>
+          <a href="https://cer.mistora.club/index/index/mswj" class="site-item" target="_blank" rel="noopener" style="--ac:#ef4444"><i class="fas fa-file-code"></i><span class="site-name">描述文件</span><span class="site-desc">描述文件签名</span></a>
+          <a href="https://cer.mistora.club/index/index/yunpan" class="site-item" target="_blank" rel="noopener" style="--ac:#f97316"><i class="fas fa-icons"></i><span class="site-name">AppStore图标库</span><span class="site-desc">App图标资源合集</span></a>
+        </div>
+
+        <div class="site-group"><i class="fas fa-desktop"></i> 演示站点</div>
+        <div class="site-grid">
+          <a href="https://zcnw4inahhn0.feishu.cn/docx/BGPKdB2ctosBIBxXvXtcWBAinif?from=from_copylink" class="site-item" target="_blank" rel="noopener" style="--ac:#6366f1"><i class="fas fa-ticket-alt"></i><span class="site-name">发卡演示</span><span class="site-desc">自动发卡系统</span></a>
+          <a href="https://zcnw4inahhn0.feishu.cn/docx/R0qAdgD4ion5jZxNpAVcOaa5nOf?from=from_copylink#" class="site-item" target="_blank" rel="noopener" style="--ac:#8b5cf6"><i class="fas fa-file-signature"></i><span class="site-name">签名演示</span><span class="site-desc">签名功能体验</span></a>
+          <a href="https://zcnw4inahhn0.feishu.cn/docx/WHnudRhqKowM1nx41rvcHx9nnPh?from=from_copylink" class="site-item" target="_blank" rel="noopener" style="--ac:#10b981"><i class="fas fa-laptop"></i><span class="site-name">其他演示</span><span class="site-desc">更多功能预览</span></a>
+        </div>
+
+        <div class="site-group"><i class="fas fa-apple-alt"></i> 苹果ID账号</div>
+        <div class="site-grid">
+          <a href="https://id.mistora.cc/" class="site-item" target="_blank" rel="noopener" style="--ac:#6366f1"><i class="fab fa-apple"></i><span class="site-name">美区共享ID</span><span class="site-desc">美区 Apple ID 共享</span></a>
+          <a href="https://zpyx.mistora.cn/?cid=87" class="site-item" target="_blank" rel="noopener" style="--ac:#f97316"><i class="fas fa-rocket"></i><span class="site-name">小火箭独享ID</span><span class="site-desc">Shadowrocket 账号</span></a>
+          <a href="https://zpyx.mistora.cn/?cid=86" class="site-item" target="_blank" rel="noopener" style="--ac:#ec4899"><i class="fas fa-globe-americas"></i><span class="site-name">各国苹果ID</span><span class="site-desc">多国 Apple ID</span></a>
+          <a href="https://h5.lot-ml.com/ProductEn/Index/f4448128ead3cab5" class="site-item" target="_blank" rel="noopener" style="--ac:#3b82f6"><i class="fas fa-sim-card"></i><span class="site-name">免费电话卡</span><span class="site-desc">eSIM 与电话卡</span></a>
+        </div>
+
+
+      </div>
+    </section>
+    <section class="card sites-card">
+      <div class="card-body">
+        <div class="card-label"><i class="fas fa-globe"></i> 其他站点</div>
+
+        <div class="site-group"><i class="fas fa-video"></i> 视频解析</div>
+        <div class="site-grid">
+          <a href="https://www.nuliya.top/vip/" class="site-item" target="_blank" rel="noopener" style="--ac:#6366f1"><i class="fas fa-film"></i><span class="site-name">爱腾讯VIP视频解析</span><span class="site-desc">腾讯/爱奇艺等 VIP 解析</span></a>
+          <a href="https://twitterxz.com/" class="site-item" target="_blank" rel="noopener" style="--ac:#f97316"><i class="fas fa-download"></i><span class="site-name">推特X视频解析</span><span class="site-desc">Twitter/X 视频下载</span></a>
+          <a href="https://www.v2ob.com/" class="site-item" target="_blank" rel="noopener" style="--ac:#ec4899"><i class="fas fa-play"></i><span class="site-name">国内短视频解析</span><span class="site-desc">抖音/快手等去水印</span></a>
+          <a href="https://dlbunny.com/zh-CN" class="site-item" target="_blank" rel="noopener" style="--ac:#3b82f6"><i class="fas fa-globe-americas"></i><span class="site-name">国外短视频解析</span><span class="site-desc">TikTok/Reels 等下载</span></a>
+        </div>
+
+        <div class="site-group"><i class="fas fa-network-wired"></i> 科学魔法</div>
+        <div class="site-grid">
+          <a href="https://clashmi.app/download" class="site-item" target="_blank" rel="noopener" style="--ac:#ec4899"><i class="fas fa-cloud-download-alt"></i><span class="site-name">ClashMi</span><span class="site-desc">客户端下载</span></a>
+          <a href="https://43.142.135.77/user/register?code=77ufTrY3" class="site-item" target="_blank" rel="noopener" style="--ac:#6366f1"><i class="fas fa-server"></i><span class="site-name">MGNB</span><span class="site-desc">高速节点</span></a>
+          <a href="https://invite.invitevp.com/#/register?code=K2hRl2oP" class="site-item" target="_blank" rel="noopener" style="--ac:#f97316"><i class="fas fa-bolt"></i><span class="site-name">BEST</span><span class="site-desc">优质节点</span></a>
+          <a href="https://ikuuu.win/auth/register?code=xUFe" class="site-item" target="_blank" rel="noopener" style="--ac:#3b82f6"><i class="fas fa-shield-alt"></i><span class="site-name">Ikuuu</span><span class="site-desc">稳定节点</span></a>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══ Contact ═══ -->
+  <section class="card contact-card bento-full">
+    <div class="contact-row">
+      <div class="contact-qr">
+        <i class="fas fa-paper-plane"></i>
+        <span>联系我</span>
+      </div>
+      <div class="contact-links">
+        <a href="static/img/qiwei.jpg" target="_blank" rel="noopener"><i class="fab fa-weixin"></i> 企业微信</a>
+        <a href="static/img/weixin.jpg" target="_blank" rel="noopener"><i class="fab fa-weixin"></i> 微信</a>
+        <a href="static/img/qq.jpg" target="_blank" rel="noopener"><i class="fab fa-qq"></i> QQ</a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bento-full">
+    <div class="footer-inner">
+      <p>&copy; 2026 甜甜 &mdash; All rights reserved.</p>
+      <p class="footer-sub">Built with <span>❤</span> &middot; Powered by curiosity</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// splash screen
+(function(){
+  var splash = document.getElementById('splash');
+  if (!splash) return;
+  var done = false;
+  function hideSplash(){
+    if (done) return; done = true;
+    splash.classList.add('fade-out');
+    setTimeout(function(){ splash.remove(); }, 700);
+  }
+  window.addEventListener('load', function(){
+    setTimeout(hideSplash, 3500);
+  });
+  splash.addEventListener('click', hideSplash);
+})();
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('themeToggle');
+  var html = document.documentElement;
+  var manual = localStorage.getItem('theme-manual');
+
+  function isNight(){ var h = new Date().getHours(); return h >= 18 || h < 6; }
+  function apply(){
+    var dark = isNight();
+    html.setAttribute('data-theme', dark ? 'dark' : 'light');
+    btn.innerHTML = dark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  }
+
+  if (manual) {
+    html.setAttribute('data-theme', manual);
+    btn.innerHTML = manual === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  } else {
+    apply();
+  }
+
+  btn.addEventListener('click', function(){
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme-manual', isDark ? 'light' : 'dark');
+    btn.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+  });
+
+  setInterval(function(){
+    if (!localStorage.getItem('theme-manual')) {
+      apply();
+    }
+  }, 60000);
+})();
+</script>
+<script>
+// announcement marquee
+['announceTrack','announceTrackM'].forEach(function(id){
+  var track = document.getElementById(id);
+  if (!track) return;
+  var items = track.querySelectorAll('.announce-item');
+  var wrapper = document.createElement('div');
+  wrapper.className = 'announce-track-inner';
+  items.forEach(function(el){ wrapper.appendChild(el); });
+  items.forEach(function(el){ wrapper.appendChild(el.cloneNode(true)); });
+  track.appendChild(wrapper);
+});
+</script>
+<script>
+// terminal typing
+(function(){
+  var cmds = [
+    'docker compose up -d',
+    'npm run build --prod',
+    'git push origin main',
+    'ssh root@cloud',
+    'python3 deploy.py',
+    'nginx -s reload',
+    'mysql -u admin -p',
+    'redis-cli INFO stats',
+    'kubectl get pods -A'
+  ];
+  var el = document.getElementById('termCmd');
+  if (!el) return;
+  var i = 0, j = 0, typing = true, wait = 0;
+  function tick(){
+    if (wait > 0) { wait--; requestAnimationFrame(tick); return; }
+    if (typing) {
+      if (j < cmds[i].length) { el.textContent = cmds[i].substring(0, j+1); j++; wait = 2; }
+      else { wait = 30; typing = false; }
+    } else {
+      if (j > 0) { el.textContent = cmds[i].substring(0, j-1); j--; wait = 1; }
+      else { i = (i + 1) % cmds.length; typing = true; wait = 12; }
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+<script>
+// random quotes
+(function(){
+  var qs = [
+    { t:'代码是写给人看的，顺便能在机器上运行。', f:'—— Harold Abelson' },
+    { t:'保持好奇，持续学习。', f:'—— 甜甜' },
+    { t:'简单是最高级的复杂。', f:'—— Leonardo da Vinci' },
+    { t:'一个好的程序员是那种在穿过一条单行道之前，先向两边看的人。', f:'—— Doug Linder' },
+    { t:'世界上只有一种真正的英雄主义，那就是认清生活的真相后依然热爱生活。', f:'—— 罗曼·罗兰' },
+    { t:'别只想着写好代码，想着解决真正的问题。', f:'—— 技术圈名言' }
+  ];
+  var tx = document.getElementById('quoteText');
+  var fr = document.getElementById('quoteFrom');
+  if (!tx) return;
+  var idx = Math.floor(Math.random() * qs.length);
+  function show(){
+    tx.style.opacity = '0'; tx.style.transform = 'translateY(6px)';
+    setTimeout(function(){
+      tx.textContent = qs[idx].t;
+      fr.textContent = qs[idx].f;
+      tx.style.opacity = '1'; tx.style.transform = 'translateY(0)';
+      idx = (idx + 1) % qs.length;
+    }, 400);
+  }
+  show();
+  setInterval(show, 6000);
+})();
+</script>
+<script>
+// music player
+(function(){
+  var songs = [
+    {t:'Blinding Lights',a:'The Weeknd'},
+    {t:'Shape of You',a:'Ed Sheeran'},
+    {t:'STAY',a:'The Kid LAROI'},
+    {t:'As It Was',a:'Harry Styles'},
+    {t:'Flowers',a:'Miley Cyrus'}
+  ];
+  var title = document.getElementById('musicTitle');
+  var artist = document.getElementById('musicArtist');
+  var cover = document.getElementById('musicCover');
+  if (!title) return;
+  var idx = 0;
+  function next(){
+    idx = (idx + 1) % songs.length;
+    cover.style.opacity = '0.4';
+    title.style.opacity = '0';
+    setTimeout(function(){
+      title.textContent = songs[idx].t;
+      artist.textContent = songs[idx].a;
+      cover.style.opacity = '1';
+      title.style.opacity = '1';
+    }, 400);
+  }
+  setInterval(next, 18000);
+})();
+</script>
+<script>
+// hero path canvas — natural terrain + stick runner
+(function(){
+  var canvas = document.getElementById('heroPath');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var width, height;
+
+  function resize(){
+    var rect = canvas.parentElement.getBoundingClientRect();
+    width = rect.width;
+    height = 90;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.scale(dpr, dpr);
+  }
+
+  function terrain(x, t){
+    return height-24
+      + Math.sin(x*0.004 + t*0.0004)*9
+      + Math.sin(x*0.011 + t*0.0007)*5
+      + Math.sin(x*0.019 + t*0.0003)*3
+      + Math.sin(x*0.027 + t*0.0009)*2;
+  }
+
+  function drawRunner(ctx, x, groundY, frame){
+    var phase = frame / 4 * Math.PI * 2;
+    var bob = Math.abs(Math.cos(phase)) * 3;
+    var legSwing = Math.sin(phase) * 5;
+    var armSwing = Math.sin(phase) * 7;
+
+    var footY = groundY - 1;
+    var hipY  = footY - 15 - bob;
+    var bellyY= hipY - 8;
+    var neckY = bellyY - 7;
+    var headY = neckY - 5;
+    var headR = 6;
+
+    ctx.save();
+    ctx.translate(x, 0);
+
+    ctx.beginPath();
+    ctx.ellipse(0, footY + 1, 7, 2, 0, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(0,0,0,.18)';
+    ctx.fill();
+
+    var auraGrd = ctx.createRadialGradient(0, bellyY - 2, 3, 0, bellyY - 2, 28);
+    auraGrd.addColorStop(0, 'rgba(167,139,250,.14)');
+    auraGrd.addColorStop(1, 'rgba(167,139,250,0)');
+    ctx.fillStyle = auraGrd;
+    ctx.beginPath();
+    ctx.arc(0, bellyY - 2, 28, 0, Math.PI*2);
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(210,220,240,.85)';
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(-2, hipY);
+    ctx.lineTo(-2 + legSwing * 0.6, footY);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(2, hipY);
+    ctx.lineTo(2 - legSwing * 0.6, footY);
+    ctx.stroke();
+
+    var hoodieGrd = ctx.createLinearGradient(0, neckY, 0, hipY);
+    hoodieGrd.addColorStop(0, '#a78bfa');
+    hoodieGrd.addColorStop(.4, '#8b5cf6');
+    hoodieGrd.addColorStop(1, '#7c3aed');
+    ctx.fillStyle = hoodieGrd;
+    ctx.beginPath();
+    ctx.moveTo(-6, hipY);
+    ctx.quadraticCurveTo(-8, bellyY, -6, neckY);
+    ctx.lineTo(6, neckY);
+    ctx.quadraticCurveTo(8, bellyY, 6, hipY);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = '#7c3aed';
+    ctx.beginPath();
+    ctx.moveTo(-5, neckY);
+    ctx.quadraticCurveTo(-9, headY - 4, -2, headY - headR - 2);
+    ctx.quadraticCurveTo(0, headY - headR - 6, 2, headY - headR - 2);
+    ctx.quadraticCurveTo(9, headY - 4, 5, neckY);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(200,210,240,.85)';
+    ctx.lineWidth = 2.6;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(-5, neckY + 4);
+    ctx.lineTo(-5 + armSwing * 0.7, neckY - 3 + bob * 0.2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(5, neckY + 4);
+    ctx.lineTo(5 - armSwing * 0.7, neckY - 3 + bob * 0.2);
+    ctx.stroke();
+
+    ctx.fillStyle = 'rgba(235,240,248,.95)';
+    ctx.beginPath();
+    ctx.arc(0, headY, headR, 0, Math.PI*2);
+    ctx.fill();
+
+    ctx.fillStyle = '#1e1b4b';
+    ctx.beginPath(); ctx.arc(-2, headY - 1, 1, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.arc(2, headY - 1, 1, 0, Math.PI*2); ctx.fill();
+
+    ctx.strokeStyle = 'rgba(139,92,246,.4)';
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.arc(0, headY + 1, 2.2, 0.15, Math.PI - 0.15);
+    ctx.stroke();
+
+    ctx.fillStyle = 'rgba(244,114,182,.2)';
+    ctx.beginPath(); ctx.ellipse(-4, headY + 1, 2, 1, -0.2, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(4, headY + 1, 2, 1, 0.2, 0, Math.PI*2); ctx.fill();
+
+    ctx.restore();
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,width,height);
+    var t = Date.now();
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(0, height);
+    for (var x=0; x<=width; x+=3){
+      ctx.lineTo(x, terrain(x, t));
+    }
+    ctx.lineTo(width, height);
+    ctx.closePath();
+    var grd = ctx.createLinearGradient(0, terrain(0,t)+4, 0, height);
+    grd.addColorStop(0,'rgba(34,211,238,.01)');
+    grd.addColorStop(.6,'rgba(167,139,250,.03)');
+    grd.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle=grd;
+    ctx.fill();
+    ctx.restore();
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(0, terrain(0, t));
+    for (var x=0; x<=width; x+=3){
+      ctx.lineTo(x, terrain(x, t));
+    }
+    var lineGrd = ctx.createLinearGradient(0,0,width,0);
+    lineGrd.addColorStop(0,'#22d3ee');
+    lineGrd.addColorStop(.3,'#a78bfa');
+    lineGrd.addColorStop(.6,'#c4b5fd');
+    lineGrd.addColorStop(1,'#f472b6');
+    ctx.strokeStyle=lineGrd;
+    ctx.lineWidth=1.2;
+    ctx.shadowColor='rgba(167,139,250,.25)';
+    ctx.shadowBlur=6;
+    ctx.stroke();
+    ctx.restore();
+
+    ctx.save();
+    for (var i=0; i<5; i++){
+      var sx = ((t*0.008 + i*width/5 + 30) % (width+20)) - 10;
+      var sy = terrain(sx, t) - 6 - Math.abs(Math.sin(t*0.002+i))*6;
+      var alpha = 0.2 + 0.25*Math.sin(t*0.004 + i*1.7);
+      ctx.beginPath();
+      ctx.arc(sx, sy, 2, 0, Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,'+alpha+')';
+      ctx.shadowColor='rgba(34,211,238,.4)';
+      ctx.shadowBlur=4;
+      ctx.fill();
+    }
+    ctx.restore();
+
+    var runnerX = ((t*0.05) % (width+60)) - 30;
+    var groundY = terrain(runnerX, t);
+    var frame = Math.floor(t / 120) % 8;
+    drawRunner(ctx, runnerX, groundY, frame);
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+  window.addEventListener('resize', resize);
+})();
+</script>
+<script src="static/js/xklz.js"></script>
+</body>
+</html>
